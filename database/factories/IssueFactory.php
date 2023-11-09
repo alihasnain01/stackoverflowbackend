@@ -17,9 +17,10 @@ class IssueFactory extends Factory
     public function definition(): array
     {
         return [
-            'title'=>$this->faker->sentence(),
-            'description'=>$this->faker->paragraph(),
-            'topic_id'=>$this->faker->numberBetween(1,13),
+            'title' => $this->faker->sentence(),
+            'description' => $this->faker->paragraph(),
+            'user_id' => $this->faker->numberBetween(2, 4),
+            'topic_id' => $this->faker->numberBetween(1, 13),
         ];
     }
 }

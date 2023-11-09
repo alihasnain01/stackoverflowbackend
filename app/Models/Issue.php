@@ -10,5 +10,10 @@ class Issue extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['name', 'description','topic_id'];
+    protected $fillable = ['name', 'description', 'topic_id'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }
