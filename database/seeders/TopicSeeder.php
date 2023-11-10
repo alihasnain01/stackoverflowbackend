@@ -14,12 +14,13 @@ class TopicSeeder extends Seeder
      */
     public function run(): void
     {
-        $names=['Laravel','Javascript','JQuery','React','Vue','Angular','PHP','GraphQL','Python','MySql','MongoDB','ROR','Others'];
-        
+        $names = ['Laravel', 'Javascript', 'JQuery', 'React', 'Vue', 'Angular', 'PHP', 'GraphQL', 'Python', 'MySql', 'MongoDB', 'ROR', 'Others'];
+
         foreach ($names as $name) {
             Topic::create([
-                'name'=>$name,
-                'slug'=>Str::slug($name),
+                'name' => $name,
+                'slug' => Str::slug($name),
+                'description' => $name === 'Laravel' ? 'Later on all the description will add in the respected category' : 'Later on all the description will add in the respected category Later on all the description will add in the respected category Later on all the description will add in the respected category',
             ]);
         }
     }

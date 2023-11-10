@@ -10,5 +10,10 @@ class Topic extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable=['title','body','category_id','excerpt','slug'];
+    protected $fillable = ['title', 'body', 'description', 'category_id', 'excerpt', 'slug'];
+
+    public function issues()
+    {
+        return $this->hasMany(Issue::class);
+    }
 }

@@ -20,9 +20,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('topics',[TopicController::class,'getTopics']);
+Route::get('topics', [TopicController::class, 'getTopics']);
 
-Route::prefix('issues')->group(function(){
-    Route::get('/',[IssueController::class,'getIssueById']);
-    Route::get('/{id}',[IssueController::class,'getSingleIssue']); 
+Route::prefix('issues')->group(function () {
+    Route::get('/', [IssueController::class, 'getIssueById']);
+    Route::get('/{id}', [IssueController::class, 'getSingleIssue']);
+});
+
+Route::prefix('categories')->group(function () {
+    Route::get('/', [TopicController::class, 'getCategories']);
 });
