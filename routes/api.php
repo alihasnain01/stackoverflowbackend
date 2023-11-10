@@ -21,4 +21,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('topics',[TopicController::class,'getTopics']);
-Route::get('issues',[IssueController::class,'getIssueById']);
+
+Route::prefix('issues')->group(function(){
+    Route::get('/',[IssueController::class,'getIssueById']);
+    Route::get('/{id}',[IssueController::class,'getSingleIssue']); 
+});

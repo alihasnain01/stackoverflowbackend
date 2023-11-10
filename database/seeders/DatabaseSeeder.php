@@ -41,7 +41,35 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'name' => 'User 3',
-            'email' => 'user 3@gmail.com',
+            'email' => 'user3@gmail.com',
+            'email_verified_at' => Carbon::now(),
+            'password' => Hash::make('password'),
+        ]);
+
+        User::create([
+            'name' => 'User 4',
+            'email' => 'user4@gmail.com',
+            'email_verified_at' => Carbon::now(),
+            'password' => Hash::make('password'),
+        ]);
+
+        User::create([
+            'name' => 'User 5',
+            'email' => 'user5@gmail.com',
+            'email_verified_at' => Carbon::now(),
+            'password' => Hash::make('password'),
+        ]);
+
+        User::create([
+            'name' => 'User 6',
+            'email' => 'user6@gmail.com',
+            'email_verified_at' => Carbon::now(),
+            'password' => Hash::make('password'),
+        ]);
+
+        User::create([
+            'name' => 'User 7',
+            'email' => 'user7@gmail.com',
             'email_verified_at' => Carbon::now(),
             'password' => Hash::make('password'),
         ]);
@@ -49,6 +77,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             TopicSeeder::class,
             IssueSeeder::class,
+            SolutionSeeder::class,
         ]);
     }
 }

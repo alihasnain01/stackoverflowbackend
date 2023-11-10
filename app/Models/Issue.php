@@ -16,4 +16,8 @@ class Issue extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function solutions(){
+        return $this->hasMany(Solution::class);
+    }
 }
