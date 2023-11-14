@@ -22,6 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('signin', [UserController::class, 'login']);
+Route::post('signup', [UserController::class, 'register']);
 
 Route::get('topics', [TopicController::class, 'getTopics']);
 
