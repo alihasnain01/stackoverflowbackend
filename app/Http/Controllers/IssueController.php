@@ -24,8 +24,15 @@ class IssueController extends Controller
         return ['status' => true, 'msg' => 'Data fetched successfully', 'data' => $issues];
     }
 
-    public function getSingleIssue($id){
-        $issue=Issue::with(['user:id,name','solutions'])->find($id);
-        return ['status'=>true,'msg'=>'Data fetched successfully','data'=>$issue];
+    public function getSingleIssue($id)
+    {
+        $issue = Issue::with(['user:id,name', 'solutions'])->find($id);
+        return ['status' => true, 'msg' => 'Data fetched successfully', 'data' => $issue];
+    }
+
+    public function postSolution(Request $request)
+    {
+        return ['status' => true];
+        dd($request->all());
     }
 }

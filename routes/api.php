@@ -21,6 +21,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('issues/{id}/solutions', [IssueController::class, 'postSolution']);
+});
+
+
 Route::post('signin', [UserController::class, 'login']);
 Route::post('signup', [UserController::class, 'register']);
 
