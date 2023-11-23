@@ -77,7 +77,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             TopicSeeder::class,
             IssueSeeder::class,
-            SolutionSeeder::class,
+            // SolutionSeeder::class,
         ]);
     }
 }
