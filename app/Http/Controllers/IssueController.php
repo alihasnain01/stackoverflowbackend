@@ -17,9 +17,7 @@ class IssueController extends Controller
             $q->where('topic_id', $id);
         })->when($query, function ($q) use ($query) {
             $q->where('title', 'like', '%' . $query . '%');
-        }, function ($q) {
-            $q->whereBetween('created_at', [Carbon::now()->subDays(6), Carbon::now()])->latest();
-        })->paginate(15, ['*'], 'page', $page);
+        })->latest()->paginate(15, ['*'], 'page', $page);
 
         return ['status' => true, 'msg' => 'Data fetched successfully', 'data' => $issues];
     }
